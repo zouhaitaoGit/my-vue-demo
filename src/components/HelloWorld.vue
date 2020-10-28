@@ -1,36 +1,54 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <h3>相册</h3>
+  <div class="imgBox">
+    <div class="imgList" v-for="item in list" :key="item">
+      <img :src="require('../assets/logo.png')" alt="">
+      </div>
   </div>
 </template>
 
 <script>
+import Photo from '../util/photo'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      list: [1, 2, 3, 4, 5, 6, 7, 8]
     }
+  },
+  mounted () {
+    // eslint-disable-next-line no-new
+    new Photo('.imgList', '.imgBox')
+    // let photo1 = new
+    // console.log(photo1)
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.imgBox {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  margin: 100px auto;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg);
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.imgList {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-a {
-  color: #42b983;
+.imgList img {
+  /*
+      倒影
+  */
+  -webkit-box-reflect:below 0 -webkit-linear-gradient(transparent,transparent 20%,rgba(255,255,255,.3));
 }
 </style>
