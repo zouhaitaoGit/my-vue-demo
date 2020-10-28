@@ -4,6 +4,7 @@
   "description": "A Vue.js project",
   "author": "邹海涛 <zouhaitao_wy@163.com>",
   "private": true,
+  "homepage": "https://zouhaitaogit.github.io/my-vue-demo/",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
