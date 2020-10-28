@@ -1,7 +1,7 @@
 <template>
   <div class="imgBox">
     <div class="imgList" v-for="item in list" :key="item">
-      <img :src="require('../assets/logo.png')" alt="">
+      <img :src="require('../assets/' + item + '.png')" alt="">
       </div>
   </div>
 </template>
@@ -18,19 +18,13 @@ export default {
   mounted () {
     // eslint-disable-next-line no-new
     new Photo('.imgList', '.imgBox')
-    // let photo1 = new
-    // console.log(photo1)
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body, html {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
+
 .imgBox {
   width: 200px;
   height: 150px;
@@ -38,7 +32,7 @@ body, html {
   margin: 100px auto;
   transform-origin: center center;
   transform-style: preserve-3d;
-  transform: rotateX(20deg);
+  transform: rotateX(10deg);
 }
 .imgList {
   position: absolute;

@@ -19,7 +19,7 @@ export default class Album {
     let i = 0
     setInterval(() => {
       this.setStyle(ele, `rotateX(20deg) rotateY(${i++}deg)`)
-    }, 500)
+    }, 40)
   }
   setStyle (ele, style) {
     ele.style.transform = style
